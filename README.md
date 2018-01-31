@@ -1,2 +1,21 @@
-# pcf-knowledge-depot
-Parking lot for notes and articles about PCF hints, hacks and how-to's
+# PCF Knowledge Depot
+
+Notes and articles around PCF ops/apps tribal knowledge (hints, best-practices and hacks) that have not yet been documented or publicly shared with PCF customers.
+
+Ideally, this would be a temporary repository for such material before it gets published either as part of PCF Documentation or as a Pivotal Knowledge Base article, or before it gets submitted as a PR to the appropriate git repository. Once that is done, the corresponding document in this repository should be updated with a note and a link to the new documentation/article.
+
+---
+
+Table of Contents
+
+## PCF Operations
+
+- Generic (applies to all PCF tiles)
+- PAS
+- PKS
+- BOSH
+- CredHub
+
+## PCF Application Deployment and Management
+
+- [Monitoring](./apps/monitoring/README.md)
