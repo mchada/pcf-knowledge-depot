@@ -1,4 +1,8 @@
-## Monitoring application status with a DataDog HTTP monitor
+<img src="https://docs.pivotal.io/images/cloud_rings.png" alt="PCF" height="80"/>&nbsp;
+<img src="https://www.cloudfoundry.org/wp-content/uploads/2017/04/dd_logo_transparentbg-400x400.png" alt="DataDog" height="80"/>
+
+
+## Monitoring applications status with a DataDog HTTP monitor
 
 This article provides a sample of an application monitoring mechanism that uses
 a DataDog HTTP Monitor agent to check if a specific application URL endpoint is up or if the returned
