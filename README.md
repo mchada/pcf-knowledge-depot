@@ -1,3 +1,5 @@
+<img src="https://docs.pivotal.io/images/cloud_rings.png" alt="PCF Knowledge Depot" width="100"/>
+
 # PCF Knowledge Depot
 
 Notes and articles around PCF ops/apps tribal knowledge (hints, best-practices and hacks) that have not yet been documented or publicly shared with PCF customers.
@@ -6,16 +8,17 @@ Ideally, this would be a temporary repository for such material before it gets p
 
 ---
 
-Table of Contents
+## Table of Contents
 
-## PCF Operations
+### PCF Applications Deployment and Management
 
+- [Applications Monitoring](./apps/monitoring/README.md)
+
+### PCF Operations
+
+TBD
 - Generic (applies to all PCF tiles)
 - PAS
 - PKS
 - BOSH
 - CredHub
-
-## PCF Application Deployment and Management
-
-- [Monitoring](./apps/monitoring/README.md)

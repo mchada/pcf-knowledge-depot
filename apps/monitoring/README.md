@@ -6,6 +6,6 @@ Ideally, this would be a temporary repository for such material before it gets p
 
 ---
 
-Table of Contents
+## Table of Contents
 
 - [Monitoring application status with a DataDog HTTP monitor](HTTP-MONITOR-DATADOG.md)
