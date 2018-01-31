@@ -1,5 +1,5 @@
-<img src="https://docs.pivotal.io/images/cloud_rings.png" alt="PCF" height="70"/>&nbsp;
-<img src="https://datadog-prod.imgix.net/img/datadog_logo_share_tt.png" alt="DataDog" height="70"/>
+<img src="https://docs.pivotal.io/images/cloud_rings.png" alt="PCF" height="60"/>&nbsp;
+<img src="https://pbs.twimg.com/profile_images/654405223855824896/5_NBf5xl.png" alt="DataDog" height="70"/>
 
 
 ## Monitoring applications status with a DataDog HTTP monitor
