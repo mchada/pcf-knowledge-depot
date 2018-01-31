@@ -1,5 +1,5 @@
-<img src="https://docs.pivotal.io/images/cloud_rings.png" alt="PCF" height="80"/>&nbsp;
-<img src="https://www.cloudfoundry.org/wp-content/uploads/2017/04/dd_logo_transparentbg-400x400.png" alt="DataDog" height="80"/>
+<img src="https://docs.pivotal.io/images/cloud_rings.png" alt="PCF" height="70"/>&nbsp;
+<img src="https://datadog-prod.imgix.net/img/datadog_logo_share_tt.png" alt="DataDog" height="70"/>
 
 
 ## Monitoring applications status with a DataDog HTTP monitor
