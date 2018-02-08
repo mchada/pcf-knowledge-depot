@@ -17,7 +17,7 @@ Ideally, this would be a temporary repository for such material before it gets p
 ### PCF Operations
 
 - [Infrastructure](operations/infrastructure)
-- PAS
+- [PAS](operations/PAS)
 - PKS
 - BOSH
 - CredHub
