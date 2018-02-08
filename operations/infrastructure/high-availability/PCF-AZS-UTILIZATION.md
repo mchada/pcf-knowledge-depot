@@ -1,7 +1,5 @@
 # Notes on PCF Availability Zones resources utilization
 
-**Work in progress**
-
 Recently, a Pivotal Cloud Foundry (PCF) customer had questions about why resources consumption for one of their PCF availability zones (AZ) cluster was substantially higher (~30%) than their other two allocated AZs.
 
 That made me realize that there seems to be a misunderstanding about AZs resources allocation in PCF and which requires clarification in order to set the right expectations among customers. The goal of this article is to clarify that topic.
@@ -19,7 +17,6 @@ However, that does not mean that IaaS resources will be equally consumed from th
 
 For PCF jobs deployed as singletons (i.e. only one instance), PCF Ops Manager requires that you select, on a per tile basis, the assigned AZ to host them. The result of that is, if your tile deployment contains several singleton jobs, all of the corresponding VMs will be instantiated on the selected AZ only.
 
-*TBD: add list of PCF jobs and if they are singletons, e.g. File Storage then it will consume a lot of disk*
 
 ### BOSH Jobs allocation algorithm
 
@@ -30,6 +27,15 @@ For example, if the three AZs were defined in Ops Manager in order `AZ1, AZ2 and
 Having that said, you probably already realized that for a job that was set to have `2` instances, in that order or AZs, BOSH will allocated VMs in `AZ1` and `AZ2`.
 
  Therefore, if `AZ1` is selected as the singletons AZ for most of the PCF tiles and if the order of AZs in Ops Mgr is set as `AZ1`, `AZ2` and `AZ3`, then it is very likely that `AZ1` will get a higher number of VMs assigned and consequently will have more of its resources consumed compared to the other two AZs.
+
+
+#### Exceptions to the rule
+
+Some jobs of certain tiles do not follow the AZ allocation algorithm described above.
+
+For example, all instances of **PCF Metrics' Elasticsearch Data** job get assigned to the singleton AZ, regardless of existing configuration to spread PCF Metrics jobs across all existing AZs (note: confirmed behavior as of PCF Metrics v1.4.0 release).
+
+PCF Metrics documentation explains that behavior and provide recommendations on how to achieve HA for that job. See item #3 in http://docs.pivotal.io/pcf-metrics/1-4/installing.html#az .
 
 
 ## Alternatives to better balance PCF jobs allocation across AZs
