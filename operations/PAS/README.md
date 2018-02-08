@@ -10,4 +10,4 @@ Undocumented hints, best-practices and hacks about PCF PAS.
 
 ---
 
-[Back to PCF Knowledge depot page](../..)
+[Back to PCF Knowledge depot page](https://github.com/pivotalservices/pcf-knowledge-depot)
