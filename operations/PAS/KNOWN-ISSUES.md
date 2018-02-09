@@ -10,6 +10,8 @@ Once an issue is published to product documentation or to Knowledge Base article
 
 ### Isolation Segment fails on fresh install of PAS 2.0 with enabled route services
 
+  [KB article published on 2/9/2018](https://discuss.pivotal.io/hc/en-us/articles/360000863274)
+
   While deploying *PAS Isolation Segment 2.0.3* tile on top of a *PAS 2.0.3* fresh deployment, the following error occurs for the isolation-segment deploy:
 
   ```
