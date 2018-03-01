@@ -12,6 +12,8 @@ Undocumented hints, best-practices and hacks about PCF PAS.
 
 - [Notes on the creation and testing of PAS Isolation Segments](PAS-ISOLATION-SEGMENTS.md)
 
+- [Using Ops Manager VM as a jumpbox to a PCF deployment](OPSMGR_AS_A_JUMPBOX.md)
+
 ---
 
 [Back to PCF Knowledge depot page](https://github.com/pivotalservices/pcf-knowledge-depot)
