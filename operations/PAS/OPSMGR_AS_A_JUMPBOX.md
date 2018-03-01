@@ -10,7 +10,7 @@ Table of Contents
 - [Connect and login to Ops Manager's UAA server](#connect-and-login-to-ops-managers-uaa-server)
 - [Connect and login to BOSH Director's UAA server](#connect-and-login-to-bosh-directors-uaa-server)
 - [Connect and login to PAS' UAA server](#connect-and-login-to-pas-uaa-server)
-- [Additional operations samples](#connect-and-login-to-pks-uaa-server)
+- [Connect and login to PKS' UAA server](#connect-and-login-to-pks-uaa-server)
 
 ---
 ### Establish an ssh session with the Ops Manager VM
