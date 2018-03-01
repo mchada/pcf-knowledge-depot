@@ -10,12 +10,12 @@ The PCF Ops Manager VM can be used as a jumpbox to access and inspect a PCF depl
 
 A domain name/ip address and an `ssh` password for the default `ubuntu` user id are configured to the Ops Manager VM during its deployment.
 
-Using such information, establish an `ssh` session with the Ops Manager VM:
-```
-   ssh ubuntu@<ops-mgr-domain-or-ip-address>
-```
+Using such information, establish an `ssh` session with the Ops Manager VM:  
+
+`ssh ubuntu@<ops-mgr-domain-or-ip-address>`  
 
 
+---
 ### Connect and login to the BOSH Director
 
 Once connected to the Ops Manager VM, you can use the BOSH 2 CLI to inspect the Bosh Director configuration.
@@ -24,23 +24,30 @@ Once connected to the Ops Manager VM, you can use the BOSH 2 CLI to inspect the 
    From the Ops Manager web interface, click on the Director tile > Status tab  and then copy the `IP address` of the `Ops Manager Director` row.  
 
 2) Collect the Director credentials  
-   From the Ops Manager web interface, click on the Director tile > Credentials tab > Director Credentials (url `https://<ops-mgr-domain>/api/v0/deployed/director/credentials/director_credentials`) and then copy the value of the `password` field.  
+   From the Ops Manager web interface, click on the Director tile > Credentials tab > Director Credentials  
+   (url `https://<ops-mgr-domain>/api/v0/deployed/director/credentials/director_credentials`)  
+   and then copy the value of the `password` field.  
 
 3) Set an environment alias for the director  
+
    `bosh alias-env director -e <ip_address_from_step1> --ca-cert=/var/tempest/workspaces/default/root_ca_certificate`  
 
 4) Login to the BOSH Director  
+
    `bosh -e director login`  
+
    Once prompted for `Email()`, enter `director`  
    Then, enter the password collected for step 2 above when prompted.  
 
 Once logged in, you can issue BOSH CLI commands targeting the `director` alias/environment.  
 Examples:  
+
 `bosh -e diretor vms       # list all VMs of all deployments`  
 `bosh -e director tasks    # list all running tasks for the BOSH Director`  
 `bosh -e director -d <deployment_name> ssh    # ssh into one of the VMs of a deployment`  
 
 
+---
 ### Connect and login to Ops Manager's UAA server
 
 Ops Manager runs its own UAA server.  
@@ -53,9 +60,11 @@ Here is how you would connect to it using `uaac` CLI from the Ops Manager VM.
 
 Once authenticated, you can then issue any `uaac` command targetting that Ops Manager UAA.  
 Example:  
-`uaac users     # list all users`
+  
+`uaac users`
 
 
+---
 ### Connect and login to BOSH Director's UAA server
 
 The BOSH Director VM runs its own UAA server.  
@@ -66,6 +75,7 @@ Here is how you would connect to it using `uaac` CLI from the Ops Manager VM.
    From the Ops Manager web interface, click on the Director tile > Status tab  and then copy the `IP address` of the `Ops Manager Director` row.  
 
 2) Target the Bosh Director UAA server  
+
    `uaac target https://<director_ip_address_from_step1>:8443 --ca-cert /var/tempest/workspaces/default/root_ca_certificate`  
 
 3) Find the "Uaa Login Client Credentials" password for the Director UAA  
@@ -77,12 +87,14 @@ Here is how you would connect to it using `uaac` CLI from the Ops Manager VM.
 5) Login and get a client token  
 
    `uaac token owner get login -s <uaa_login_password_from_step3>`  
+
    Once prompted for `User name:`, enter `admin`  
    Then, once prompted for `Password:`, enter the password retrieved in step 4.  
 
 Once authenticated, then you can issue any `uaac` command targeting the BOSH Director UAA server.  
 
 
+---
 ### Connect and login to the PAS UAA server
 
 `uaac target uaa.<PAS-system-domain> --skip-ssl-validation`
@@ -92,13 +104,17 @@ Once authenticated, then you can issue any `uaac` command targeting the BOSH Dir
 Once authenticated, then you can issue any `uaac` command targeting the PAS UAA server.
 
 
+---
 ### Connect and login to the PKS UAA server
 
 `uaac target https://<PKS-uaa-url>:8443 --skip-ssl-validation`  
-Get the PKS UAA/API url from Ops Mgr web interface > PKS tile > Settings > UAA > UAA URL field.  
+
+Get the PKS UAA url from Ops Mgr web interface > PKS tile > Settings > UAA > UAA URL  
 
 `uaac token client get admin`  
-Once prompted, get the secret from Ops Mgr web interface > PKS tile > Credentials > Uaa Admin Secret (url `https://<ops-mgr-domain>/api/v0/deployed/products/<pks-deployment-id>/credentials/.properties.uaa_admin_secret`)  
+
+Once prompted, get the secret from Ops Mgr web interface > PKS tile > Credentials > Uaa Admin Secret  
+(url `https://<ops-mgr-domain>/api/v0/deployed/products/<pks-deployment-id>/credentials/.properties.uaa_admin_secret`)  
 
 Once authenticated, you can then issue any `uaac` command targeting the PKS UAA server.  
 
