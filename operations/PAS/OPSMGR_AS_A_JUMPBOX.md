@@ -4,6 +4,13 @@
 
 The PCF Ops Manager VM can be used as a jumpbox to access and inspect a PCF deployment infrastructure, given that it is usually deployed inside of the PCF *infrastructure network*  along with the BOSH Director VM (see [PCF Reference Architecture](https://docs.pivotal.io/pivotalcf/refarch/index.html)), and that it contains PCF and BOSH management tools pre-installed (e.g. `uaac` and `bosh 2.0` CLIs).
 
+Table of Contents
+- [Establish an ssh session with the Ops Manager VM](#establish-an-ssh-session-with-the-ops-manager-vm)
+- [Connect and login to the BOSH Director](#connect-and-login-to-the-bosh-director)
+- [Connect and login to Ops Manager's UAA server](#connect-and-login-to-ops-managers-uaa-server)
+- [Connect and login to BOSH Director's UAA server](#connect-and-login-to-bosh-directors-uaa-server)
+- [Connect and login to PAS' UAA server](#connect-and-login-to-pas-uaa-server)
+- [Additional operations samples](#connect-and-login-to-pks-uaa-server)
 
 ---
 ### Establish an ssh session with the Ops Manager VM
@@ -60,7 +67,7 @@ Here is how you would connect to it using `uaac` CLI from the Ops Manager VM.
 
 Once authenticated, you can then issue any `uaac` command targetting that Ops Manager UAA.  
 Example:  
-  
+
 `uaac users`
 
 
@@ -95,7 +102,7 @@ Once authenticated, then you can issue any `uaac` command targeting the BOSH Dir
 
 
 ---
-### Connect and login to the PAS UAA server
+### Connect and login to PAS' UAA server
 
 `uaac target uaa.<PAS-system-domain> --skip-ssl-validation`
 
@@ -105,7 +112,7 @@ Once authenticated, then you can issue any `uaac` command targeting the PAS UAA 
 
 
 ---
-### Connect and login to the PKS UAA server
+### Connect and login to PKS' UAA server
 
 `uaac target https://<PKS-uaa-url>:8443 --skip-ssl-validation`  
 
