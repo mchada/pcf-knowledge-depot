@@ -2,6 +2,8 @@
 
 # Using Ops Manager VM as a jumpbox to a PCF deployment
 
+*This content has been published to [an article on Pivotal Knowledge Base website](https://discuss.pivotal.io/hc/en-us/articles/360001451554) on 03/05/2018.*
+
 The PCF Ops Manager VM can be used as a jumpbox to access and inspect a PCF deployment infrastructure, given that it is usually deployed inside of the PCF *infrastructure network*  along with the BOSH Director VM (see [PCF Reference Architecture](https://docs.pivotal.io/pivotalcf/refarch/index.html)), and that it contains PCF and BOSH management tools pre-installed (e.g. `uaac` and `bosh 2.0` CLIs).
 
 Table of Contents
