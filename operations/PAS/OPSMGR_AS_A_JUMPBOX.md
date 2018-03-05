@@ -19,7 +19,9 @@ Table of Contents
 
 A domain name/ip address and an `ssh` password for the default `ubuntu` user id are configured to the Ops Manager VM during its deployment.
 
-Using such information, establish an `ssh` session with the Ops Manager VM:  
+Using such information, establish an `ssh` session with the Ops Manager VM.
+
+For example, for vSphere environments:  
 
 `ssh ubuntu@<ops-mgr-domain-or-ip-address>`  
 
@@ -51,7 +53,7 @@ Once connected to the Ops Manager VM, you can use the BOSH 2 CLI to inspect the 
 Once logged in, you can issue BOSH CLI commands targeting the `director` alias/environment.  
 Examples:  
 
-`bosh -e diretor vms       # list all VMs of all deployments`  
+`bosh -e director vms       # list all VMs of all deployments`  
 `bosh -e director tasks    # list all running tasks for the BOSH Director`  
 `bosh -e director -d <deployment_name> ssh    # ssh into one of the VMs of a deployment`  
 
